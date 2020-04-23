@@ -1,0 +1,65 @@
+@font-face {
+  font-family: persona5;
+  src: url(../fonts/p5hatty.ttf);
+}
+
+body {
+	background-color: black;
+}
+
+.row {
+	box-sizing: content-box;
+	line-height: 0.75em;
+	transform: rotate(-5deg);
+	font-size: 10em;
+	color: white;
+	font-family: persona5;
+	letter-spacing: 0.05em;
+	font-style: italic;
+	text-shadow: -10px 0 black, 0 10px black, 10px 0 black, 0 -10px black;
+}
+
+.row.numbers {
+	padding-left: 0.5em;
+}
+
+.hp {
+	color: rgba(116,233,202, 0.90);
+}
+
+.mp {
+	color: rgba(213,78,192, 0.95);
+}
+
+#bar-container {
+	padding-left: 6em;
+}
+
+.backgroundBar {
+	margin: 0;
+	width: 85%;
+	box-sizing: content-box;
+}
+
+.backgroundBar.hp {
+	background-color: rgba(116,233,202, 0.6);
+	margin-top: -10px;
+	transform: rotate(-6deg);
+}
+
+.backgroundBar.mp {
+	background-color: rgba(213,78,192, 0.6);
+	margin-left: 5em;
+	transform: rotate(-7deg);
+}
+
+.row.title .mp{
+	padding-left: 1em;
+}
+
+.container {
+	width: fit-content;
+	padding: 1.5em 1.5em 1.5em 0;
+	/*background-color: black;*/
+	box-sizing: content-box;
+}

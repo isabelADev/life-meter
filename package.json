@@ -1,0 +1,11 @@
+{
+  "name": "life-meter",
+  "version": "0.0.1",
+  "description": "A widget for OBS Studio That displays hp and mp of the streamer",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Isabel Almellones",
+  "license": "ISC"
+}

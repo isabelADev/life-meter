@@ -7,6 +7,34 @@ body {
 	background-color: black;
 }
 
+.row.numbers .warning {
+	animation: blink-animation 2s steps(10, start) infinite;
+	-webkit-animation: blink-animation 2s steps(10, start) infinite;
+}
+
+.hp.warning {
+	color: rgba(188,26,15, 0.9);
+}
+
+#hpBGBar.warning {
+	background-color: rgba(188,26,15, 0.2);
+}
+
+#hpBGBar.warning #health{
+	background-color: rgba(188,26,15);
+}
+
+@keyframes blink-animation {
+	from { opacity: 1.0; }
+	50% { opacity: 0.5; }
+	to { opacity: 1.0; }
+}
+@-webkit-keyframes blink-animation {
+	from { opacity: 1.0; }
+	50% { opacity: 0.5; }
+	to { opacity: 1.0; }
+}
+
 .row {
 	box-sizing: content-box;
 	line-height: 0.75em;
@@ -41,16 +69,26 @@ body {
 	box-sizing: content-box;
 }
 
-.backgroundBar.hp {
+#hpBGBar {
 	background-color: rgba(116,233,202, 0.6);
 	margin-top: -10px;
 	transform: rotate(-6deg);
 }
 
-.backgroundBar.mp {
+#mpBGBar {
 	background-color: rgba(213,78,192, 0.6);
 	margin-left: 5em;
 	transform: rotate(-7deg);
+}
+
+#health {
+	 background-color: rgb(116, 233, 202);
+	 height: 10px;
+ }
+
+#magic {
+	background-color: rgb(213, 78, 192);
+	height: 10px;
 }
 
 .row.title .mp{

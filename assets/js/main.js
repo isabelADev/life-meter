@@ -5,6 +5,15 @@ var streamTime = {
     mins: 5,
 };
 
+var vConf = {
+    maxHP: 130,
+    maxMP: 100,
+    startHp: 25,
+    startMp: 100,
+    hpTitle: 'PS',
+    mpTitle: 'PE'
+};
+
 window.onload = function () {
 
     var socket;
@@ -17,13 +26,19 @@ window.onload = function () {
         console.log(event);
     };
 
-    liveMeter = new LiveMeter(100, 100, 100, 80, 'HP', 'MP');
+
+    liveMeter = new LiveMeter(vConf.maxHP, vConf.maxMP, vConf.startHp, vConf.startMp, vConf.hpTitle, vConf.mpTitle);
     let healthBar = document.getElementById("health"),
         healthBGBar = document.getElementById("hpBGBar"),
         magicBGBar = document.getElementById("mpBGBar"),
         magicBar = document.getElementById("magic"),
         hpNumber = document.getElementById("hpNumber"),
         mpNumber = document.getElementById("mpNumber");
+        hpTitle = document.getElementById("hpTitle"),
+        mpTitle = document.getElementById("mpTitle");
+
+    hpTitle.innerHTML = liveMeter.hpTitle;
+    mpTitle.innerHTML = liveMeter.mpTitle;
 
     onPropModified('hp', hpNumber, healthBar, healthBGBar);
     onPropModified('mp', mpNumber, magicBar, magicBGBar);
@@ -55,7 +70,7 @@ window.onload = function () {
     setInterval(function () {
         elapsedTime += 1;
         if (liveMeter.hp > 0) {
-            liveMeter.addHP(-(1/totalStreamTime*100));
+            liveMeter.addHP(-(1/totalStreamTime*liveMeter.maxHP));
         }
     }, 60000);
 
@@ -99,19 +114,19 @@ window.onload = function () {
     }
 
     function addWarningClasses(value, numberElem, barElem) {
-            let warning = 'warning';
+        let warning = 'warning';
 
-            if (value > 20) {
-                if (numberElem.classList.contains(warning)) {
-                    numberElem.classList.remove(warning);
-                    barElem.classList.remove(warning);
-                }
-            } else {
-                if (!numberElem.classList.contains(warning)) {
-                    numberElem.classList.add(warning);
-                    barElem.classList.add(warning);
-                }
+        if (liveMeter.hp / liveMeter.maxHP * 100 > 20) {
+            if (numberElem.classList.contains(warning)) {
+                numberElem.classList.remove(warning);
+                barElem.classList.remove(warning);
             }
+        } else {
+            if (!numberElem.classList.contains(warning)) {
+                numberElem.classList.add(warning);
+                barElem.classList.add(warning);
+            }
+        }
     }
 
     function onPropModified(name, numberElem, barElem, bgBarElem) {
@@ -124,7 +139,7 @@ window.onload = function () {
                 addWarningClasses(value, numberElem, bgBarElem);
             }
             numberElem.innerHTML = value;
-            barElem.style.width = (liveMeter.hp / liveMeter.maxHP * 100) + "%";
+            barElem.style.width = (liveMeter[name] / liveMeter['max' + name.toUpperCase()] * 100) + "%";
         } catch (err) {
             return false;
         }

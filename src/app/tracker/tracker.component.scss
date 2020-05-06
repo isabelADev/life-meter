@@ -1,0 +1,53 @@
+@import '../tracker-themes';
+
+@each $theme, $map in $themes {
+
+  .#{$theme}.trackerContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .#{$theme} {
+    $color: map-get($map, 'color');
+    $title-font: map-get($map, 'title-font');
+    $title-left-padding: map-get($map, 'title-left-padding');
+    $bar-rotation: map-get($map, 'bar-rotation');
+    $bar-margin: map-get($map, 'bar-margin');
+    $number-left-padding: map-get($map, 'number-left-padding');
+
+    $shadow-size: 0.04em;
+    color: $color;
+    font-family: $title-font;
+    font-size: 20em;
+    letter-spacing: 0.05em;
+    font-style: italic;
+    text-shadow: (-$shadow-size) 0 black, 0 $shadow-size black, $shadow-size 0 black, 0 (-$shadow-size) black;
+
+    .titleContainer {
+      padding-left: $title-left-padding;
+    }
+
+    .numberContainer {
+      padding-left: $number-left-padding;
+    }
+
+    .backgroundBar {
+      background-color: rgba($color, 0.6);
+      margin: 0;
+      width: 85%;
+      box-sizing: content-box;
+      height: 0.1em;
+      margin: $bar-margin;
+      transform: rotate($bar-rotation);
+    }
+
+    .innerBar {
+      background-color: $color;
+      height: 100%;
+    }
+  }
+}
+
+

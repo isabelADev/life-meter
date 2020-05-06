@@ -1,0 +1,26 @@
+<div class="container">
+  <!--<app-hp [title]="hpTitle" [hp]="75"></app-hp>-->
+  <app-tracker [title]="hpTitle" [value]="75" valueName="hp"></app-tracker>
+  <span class="slash">/</span>
+  <app-tracker [title]="mpTitle" [value]="25" [maxValue]="30" valueName="mp"></app-tracker>
+<br/>
+<br/>
+  <input type="button" value="Cure" (click)="curar10hp()">
+  <input type="button" value="Ice 1" (click)="damage30hp()">
+
+  <!--<div class="row title">-->
+    <!--<span id="hpTitle" class="hp">PS</span>-->
+    <!--<span id="mpTitle" class="tracker">PE</span>-->
+  <!--</div>-->
+  <!--<div class="row numbers">-->
+    <!--<span id="hpNumber" class="hp">060</span>/<span id="mpNumber" class="tracker">060</span>-->
+  <!--</div>-->
+  <!--<div id="bar-container">-->
+    <!--<div id="hpBGBar" class="backgroundBar hp">-->
+      <!--<div id="health" style="width: 60%;"></div>-->
+    <!--</div>-->
+    <!--<div id="mpBGBar" class="backgroundBar tracker">-->
+      <!--<div id="magic" style="width: 100%;"></div>-->
+    <!--</div>-->
+  <!--</div>-->
+</div>

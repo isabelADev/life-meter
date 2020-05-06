@@ -1,0 +1,16 @@
+.container {
+  position: absolute;
+  width: 70em;
+}
+$shadow-size: 0.04em;
+
+.slash {
+  font-family: persona5;
+  font-size: 20em;
+  margin-left: 2.55em;
+  font-style: italic;
+  color: white;
+  margin-top: 1.1em;
+  display: block;
+  text-shadow: (-$shadow-size) 0 black, 0 $shadow-size black, $shadow-size 0 black, 0 (-$shadow-size) black;
+}

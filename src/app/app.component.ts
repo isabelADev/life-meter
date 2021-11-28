@@ -10,13 +10,13 @@ import {TrackerComponent} from "./tracker/tracker.component";
 export class AppComponent {
   hpTitle = environment.hpTitle;
   mpTitle = environment.mpTitle;
-  @ViewChild(TrackerComponent) hijomp: TrackerComponent;
+  @ViewChild(TrackerComponent) tracker: TrackerComponent;
 
-  curar10hp() {
-    this.hijomp.increment(10);
+  public heal10hp() {
+    this.tracker.increment(10);
   }
 
-  damage30hp() {
-    this.hijomp.increment(-5);
+  public damage30hp() {
+    this.tracker.increment(-5);
   }
 }

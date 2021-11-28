@@ -84,7 +84,7 @@ export class TrackerComponent {
   }
 
   public increment(amount: number) {
-    var auxAmount: number = Math.floor(amount);
+    const auxAmount: number = Math.floor(amount);
     this.value = Math.max(0, Math.min(this.maxValue, this.value + auxAmount));
   }
 

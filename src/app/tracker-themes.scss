@@ -1,0 +1,18 @@
+$themes: (
+  hp: (
+    color: rgba(116,233,202),
+    title-font: persona5,
+    title-left-padding: 0em,
+    number-left-padding: 1em,
+    bar-rotation: -6deg,
+    bar-margin: -0.1em 0 0 1em,
+  ),
+  mp: (
+    color: rgba(213, 78, 192),
+    title-font: persona5,
+    title-left-padding: 2.5em,
+    number-left-padding: 3em,
+    bar-rotation: -7deg,
+    bar-margin: 0.05em 0 0 1.5em,
+  )
+);

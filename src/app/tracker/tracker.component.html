@@ -1,0 +1,11 @@
+<div [class]="'trackerContainer ' + valueName">
+  <div class="titleContainer">
+    <span class="trackerTitle">{{ title }}</span>
+  </div>
+  <div class="numberContainer">
+    <span class="trackerNumber">{{ amountString }}</span>
+  </div>
+  <div class="backgroundBar">
+    <div class="innerBar" [style]="style"></div>
+  </div>
+</div>

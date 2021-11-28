@@ -2,15 +2,29 @@
   position: absolute;
   width: 70em;
 }
+
 $shadow-size: 0.04em;
 
 .slash {
-  font-family: persona5;
+  font-family: persona5, sans-serif;
   font-size: 20em;
   margin-left: 2.55em;
   font-style: italic;
   color: white;
   margin-top: 1.1em;
   display: block;
-  text-shadow: (-$shadow-size) 0 black, 0 $shadow-size black, $shadow-size 0 black, 0 (-$shadow-size) black;
+  text-shadow: (-$shadow-size) 0 black, 0 $shadow-size black, $shadow-size 0 black,
+    0 (-$shadow-size) black;
+}
+
+div#controls {
+  z-index: 9;
+}
+
+div#trackersDisplay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  z-index: -1;
 }

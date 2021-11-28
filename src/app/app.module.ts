@@ -3,18 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TrackerComponent } from './tracker/tracker.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TrackerComponent
-  ],
-  imports: [
-    FormsModule,
-    BrowserModule
-  ],
+  declarations: [AppComponent, TrackerComponent],
+  imports: [FormsModule, BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

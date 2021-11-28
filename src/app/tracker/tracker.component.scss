@@ -1,7 +1,6 @@
 @import '../tracker-themes';
 
 @each $theme, $map in $themes {
-
   .#{$theme}.trackerContainer {
     position: absolute;
     top: 0;
@@ -23,7 +22,8 @@
     font-size: 20em;
     letter-spacing: 0.05em;
     font-style: italic;
-    text-shadow: (-$shadow-size) 0 black, 0 $shadow-size black, $shadow-size 0 black, 0 (-$shadow-size) black;
+    text-shadow: (-$shadow-size) 0 black, 0 $shadow-size black, $shadow-size 0 black,
+      0 (-$shadow-size) black;
 
     .titleContainer {
       padding-left: $title-left-padding;
@@ -35,7 +35,6 @@
 
     .backgroundBar {
       background-color: rgba($color, 0.6);
-      margin: 0;
       width: 85%;
       box-sizing: content-box;
       height: 0.1em;
@@ -49,5 +48,3 @@
     }
   }
 }
-
-

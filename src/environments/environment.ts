@@ -5,5 +5,5 @@
 export const environment = {
   production: false,
   hpTitle: 'HP',
-  mpTitle: 'MP'
+  mpTitle: 'MP',
 };

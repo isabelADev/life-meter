@@ -1,21 +1,31 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tracker',
   templateUrl: './tracker.component.html',
-  styleUrls: ['./tracker.component.scss']
+  styleUrls: ['./tracker.component.scss'],
 })
 export class TrackerComponent {
   @Input() title: string;
+
   @Input() barId = 'magic';
+
   private _valueName: string = '';
+
   private _maxValue: number = 100;
+
   private _value: number = 60;
+
   private _amountString: string;
+
   style: string;
+
   titleId: string;
+
   amountId: string;
+
   barBGId: string;
+
   barBGClass: string;
 
   get valueName(): string {
@@ -37,8 +47,7 @@ export class TrackerComponent {
 
   @Input()
   set value(value: number) {
-    let str = Math.floor(value).toString();
-    this.amountString = str;
+    this.amountString = Math.floor(value).toString();
     this._value = value;
     console.log(this._value);
     this.updateStyle();
@@ -78,7 +87,7 @@ export class TrackerComponent {
   }
 
   private updateStyle() {
-    let amount = this._value / this._maxValue * 100;
+    let amount = (this._value / this._maxValue) * 100;
     this.style = `width: ${amount}%;`;
     console.log(this.style);
   }
@@ -87,5 +96,4 @@ export class TrackerComponent {
     const auxAmount: number = Math.floor(amount);
     this.value = Math.max(0, Math.min(this.maxValue, this.value + auxAmount));
   }
-
 }

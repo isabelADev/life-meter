@@ -9,7 +9,7 @@ module.exports = {
         createDefaultProgram: true,
       },
       extends: [
-        'plutin: @angular-eslint/recommended',
+        'plugin:@angular-eslint/recommended',
         // AirBnB Styleguide rules for Typescript
         'airbnb-typescript/base',
         // Settings for Prettier,
@@ -19,14 +19,14 @@ module.exports = {
     },
     {
       files: ['*.component.html'],
-      extends: [ 'plugin: @angular-eslint/template/recommended'],
+      extends: [ 'plugin:@angular-eslint/template/recommended'],
       rules: {
         'max-len': [ 'error', { code: 140 }]
       }
     },
     {
       files: ['*.component.ts'],
-      extends: [ 'plugin: @angular-eslint/template/process-inline-templates']
+      extends: [ 'plugin:@angular-eslint/template/process-inline-templates']
     }
   ]
 };

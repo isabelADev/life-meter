@@ -9,7 +9,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "eslint '*/**/*.{js,ts}' --quiet --fix"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +24,14 @@
     "rxjs": "~6.5.4",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged --relative"
+    }
+  },
+  "lint-staged": {
+    "*.{js, ts}": [ "eslint --fix"]
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.13",
